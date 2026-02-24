@@ -11,7 +11,7 @@ jobs:
   test:
     environment: testing
     runs-on: ubuntu-latest
-    container:
+    container: # if the workflow wasnt containerized, it will need to update the services network (change directions, open ports, etc. bc when the job is in container, gh creates the network internally allowing routing with labeling on service name)
       image: node:16
     env:
       MONGODB_CONNECTION_PROTOCOL: mongodb
